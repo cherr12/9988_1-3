@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차 밴드</title>
+    <!-- 부트스트랩 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .chat-bubble {
+            max-width: 100%;
+            border-radius: 20px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+            animation: slide-in 0.5s forwards; /* "forwards" 키워드가 애니메이션 유지를 위한 핵심 부분입니다 */
+            opacity: 0; /* 처음 상태의 투명도는 0으로, 보이지 않게 설정 */
+        }
+    
+        .chat-bubble-left {
+            background: #e9e9eb;
+        }
+    
+        .chat-bubble-right {
+            background: #0b93f6;
+            color: white;
+        }
+    
+        @keyframes slide-in {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    
+        .hidden {
+            display: none;
+        }
+    </style>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        function showChat(id) {
+    var chatContent = document.querySelector(`#chat-${id}`).innerHTML;
+    var modalBody = document.getElementById('chatModalBody');
+
+    // 모달의 내용을 현재 선택된 채팅 내용으로 설정합니다.
+    modalBody.innerHTML = chatContent;
+
+    // 모달을 표시합니다.
+    $('#chatModal').modal('show');
+}
+    </script>
+</head>
+<body>
+    <!-- 뒤로가기 버튼 -->
+    <div class="container mt-3">
+        <a href="file:///Users/hale/Desktop/test%20file/index1/index.html" class="btn btn-light" role="button"><</a> <!-- '메인페이지URL'을 메인 페이지의 URL로 변경해주세요. -->
+        <!-- 혹은 이전 페이지로 돌아가는 기능을 원한다면, 아래 코드를 사용하세요. -->
+        <!-- <button onclick="history.back()" class="btn btn-light"><</button> -->
+    </div>
+
+<div class="container mt-5">
+    <!-- 리스트 항목들 -->
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(1);">스마트워치에서의 활동 내역이 앱에 업데이트 되지 않아요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(4);">걸음수가 카운팅 되지 않아요.</a>        
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(2);">펌웨어 업데이트 했는데 혈압 측정 기능이 사라졌어요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(3);">날씨 기능은 왜 안되나요?</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(5);">스마트밴드에서 알림 꺼놓은 카카오채팅방의 대화 알림이 와요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(6);">밴드 찾기 중에 앱이 자동으로 꺼져요.<br>앱에서 알림 설정을 했는데 스마트워치에서 알림이 안와요.<br>산소포화도, 심박수 데이터가 앱으로 전송되지 않아요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(7);">스마트워치 충전이 안돼요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(8);">MP301(동그란 모양 시계)는 화면 시간 조절이 안 되나요?</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(9);">4주 연속 참여 포인트가 안 들어와요.</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(10);">시계를 분실했어요. 어떻게 하면 될까요?</a>
+        <a href="#" class="list-group-item list-group-item-action" onclick="showChat(11);">스트랩(시계줄)이 이상해요. 어디서 구매할 수 있나요?</a>
+    </div>
+
+    <!-- 채팅 내용들 -->
+    <div id="chat-1" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            스마트워치에서의 활동 내역이 앱에 업데이트 되지 않아요.<br> [2023년 10월 넷째 주 답변 내용]
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            ① 손목닥터 9988 2.0 앱을 최신 버전으로 업데이트 한다.<br>
+            ② 손목닥터 9988 2.0 앱에서 더보기 > 설정 > 밴드끊기를 통해 연동되어 있는 기기를 해제한다.<br>
+            ③ 휴대폰 자체 블루투스 설정 리스트에서 등록되어 있는 MP-203, MP-301 기종을 ‘기기 지우기 > 손목 닥터 앱에서 밴드 연결 해제’를 통해 지운다.<br>
+            ④ 플레이스토어(혹은 앱스토어)에서 ‘손목 닥터 9988 펌웨어 업데이트’ 앱 다운로드 한다.<br>
+            ⑤ ‘손목 닥터 9988 펌웨어 업데이트’ 앱을 통해 펌웨어 업데이트를 시행한다.<br>
+            ⑥ 펌웨어 업데이트가 완료되면 손목닥터 9988 앱에서 스마트워치를 연동(페어링)시킨 후 데이터가 제대로 동기화되는지 확인한다.
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            알려준대로 해봤는데 안돼요.<br>
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            무슨 이유에서인지는 모르겠지만 페어링이 한 번에 성공되지니 않고 3~4번 정도 시도해야 성공된다고 해요.<br><br>
+            
+            만약 여러 번 시도했음에도 페어링이 안 된다면 공식적인 루트(상담센터: 1811-9988)를 통해 안전하게 문제를 해결하시기 바라요.<br><br>
+            상담센터에 전화하면 기술팀이라는 곳에서 연락갈 수 있도록 내용을 전달해 준다고 해요.<br>
+            문제는 업체의 연락이 매우 늦는다고...
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            어디서 봤는데 데이터 연동 센터로 바로 전화하라고 하던데 그건 뭔가요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            결론부터 말씀드리자면 3차 사업에서 지급된 밴드(MP203, MP301)는 데이터 연동 센터에 전화할 수 없어요.<br><br>
+            
+            이유가 궁금하시죠?<br> 
+            이유는 손목닥터 9988 사업이 현재 3차까지 진행되면서 중간에 스마트워치 배급 업체가 달라졌기 때문이래요.<br>
+            그래서 1, 2차 밴드는 데이터 연동 센터라는 곳으로 바로 연락할 수 있지만, 3차 밴드는 다른 경로를 통해 연동 문제를 해결해야 한다고 하네요.<br><br>
+
+            많이 불편해서 개선되었으면 좋겠는 부분 중 하나에요!
+    </div>
+
+    <div id="chat-4" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            스마트워치에서 걸음수가 카운팅 되지 않아요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            이런 상황으로 상담센터(1811-9988)로 전화하면 기술팀이라는 곳으로 넘기고, 그 이후 기술팀에서 연락 오면 스마트워치 공장 초기화나 재부팅을 알려준다고 해요.<br><br>
+            하지만 초기화를 진행하면 스마트워치 데이터가 다 날아가 버린다고 하니 걱정되는 분들은 공식적인 루트(상담센터 - 기숱팀)를 통해 안전하게 문제를 해결하시기 바라요.<br><br>
+            그리고 공장초기화나 재부팅으로 안되는 상황도 있으니 웬만하면 상담센터(1811-9988)에 접수해 보시길 추천해요.<br>
+            문제는 업체의 연락이 매우 늦는다고 하더라구요..?
+        </div>
+    </div>    
+
+
+    <div id="chat-2" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            펌웨어 업데이트 했는데 혈압 측정 기능이 사라졌어요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            이번 펌웨어 업데이트로 손목닥터 앱에서 지원하지 않는 스마트워치 기능은 제거됐다고 합니다.
+        </div>
+    </div>
+
+    <div id="chat-3" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            날씨 기능은 왜 안되나요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            날씨 정보는 손목닥터 9988 사업 규격 이외의 기능으로 현재 제공되지 않고 있다고 해요. <br>
+            나중에 기능이 추가될 예정이라고 하는데 2차 사업 때부터 개선되진 않았다는 후문이…
+
+        </div>
+    </div>
+
+    <div id="chat-5" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            스마트밴드에서 알림 꺼놓은 카카오채팅방의 대화 알림이 와요.<br>
+            끌 수 있는 방법이 없을까요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            안드로이드 사용자에게 나타나는 현상이라고 해요.<br><br>
+            
+            이건 앱이나 밴드에서 설정하는 게 아니라 카카오톡 자체 설정에서 바꿔야 한다고 하더라구요?<br><br>
+
+            카카오톡 우측 하단 더 보기 ➡️ 우측 상단 톱니바퀴 ➡️ 알림 ➡️ 알림 센터에 메시지 표시 ➡️ ‘알림 켠 채팅방만’으로 체크 이렇게 설정해 두면 우리의 스마트워치도 눈치를 챙길 거에요!
+        </div>
+    </div>
+
+    <div id="chat-6" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            밴드 찾기 중에 앱이 자동으로 꺼져요.<br>
+            앱에서 알림 설정을 했는데 스마트워치에서 알림이 안와요.<br>
+            산소포화도, 심박수 데이터가 앱으로 전송되지 않아요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            이런 현상이 나타나면 서비스 센터(1811-9988)에 전화해서 기술팀으로 접수를 해야해요.
+        </div>
+    </div>
+
+    <div id="chat-7" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            스마트워치 충전이 안돼요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            1. 충전 단자를 정확히 맞췄는지 확인한다<br>
+            2. 시계 액정이 바닥과 맞닿도록 엎어둔 상태에서 충전을 시도해 본다.<br>
+            3. 1번과 2번을 반복해도 충전이 안될 경우 서비스 센터(1811-9988)에 전화해서 AS 접수한다.
+        </div>
+    </div>
+
+    <div id="chat-8" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            MP301(동그란 모양 시계)는 화면 시간 조절이 안 되나요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            원래는 이번 펌웨어 업데이트를 통해 화면 시간을 늘릴 계획이었으나 무기한 연기 됐다고 해요.<br> 
+            하지만 수요(요청)가 많으면 언젠가 바꿔주겠죠?
+        </div>
+    </div>
+
+    <div id="chat-9" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            주 3일 연속 참여 포인트는 확인되거든요?<br>
+            그런데 4주 연속 참여 포인트가 안 들어와요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            신규 참여자라면 본인이 처음 페어링 한 다음 주 월요일부터 주간 챌린지가 적용되어 계산된다고 해요.<br><br>
+
+            무슨 말이냐 하면요. 9월 21일(목)에 최초 페어링을 했으면 9월 25일(월)이 1주 차로 계산되는 거예요.<br><br>
+
+            여기서 헷갈리는 이유가 주 3일 참여 포인트는 9월 21일(목)부터 3일간 열심히 참여하면 바로 주는 거잖아요?<br><br>
+
+            상담 센터의 설명으로는 주 3일 참여 포인트와 4주 연속 참여 포인트 지급 프로그래밍이 다르게 되어 있어서 발생하는 일이라고 해요.<br><br>
+
+            요즘 같은 시대에 참 직관적이지 못한 지급 방식이라는 생각이 들어서 아쉬운 부분이에요.<br><br>
+
+            그런데 만약 제 설명이 이해되지 않는다면 상담 센터(1811-9988)로 전화하거나 온라인 상담을 남겨 보세요. 언제 지급될지 정확한 날짜를 알려줘요!<br><br>
+
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            그런데 아무리 계산해 봐도 포인트가 지급 안 된 게 확실해요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            그렇다면 시스템적으로 문제가 있는 게 맞아요.<br><br>
+            
+            상담 센터(1811-9988)로 전화하거나 온라인 상담을 남겨서 못 받은 포인트 지급 신청을 해 주세요.
+        </div>
+    </div>
+
+    <div id="chat-10" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            시계를 분실했어요. 어떻게 하면 될까요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            밴드를 분실하셨군요?<br>
+            밴드를 분실하셨다면 분실신고부터 진행해 주셔야해요.<br><br>
+
+            분실 신고 접수 방법을 알려드릴게요.<br>
+            손목 닥터 9988 홈페이지 접속 → 마이 데이터 → 신청내역 조회 → (아래쪽으로 스크롤) 선택한 스마트 워치 → 분실/파손 신고 클릭<br><br>
+
+            분실/파손 신고를 하면 분실/파손 포인트로 5,000포인트가 자동으로 차감돼요.
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            그러면 분실 신고 후에는 사업 참여가 불가한가요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            아니에요. <br>
+            새로 밴드를 구입하거나 밴드 없이 앱을 사용하여 참여하는 방법이 있어요.<br><br>
+
+            하지만 밴드없이 참여하면 포인트 획득에 있어 스마트워치를 이용하여 획득할 수 있는 포인트는 받지 못하는 등 일부 제한적일 수 있다고 하네요.
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            개인적으로 스마트워치를 구매해서 참여 상태를 유지하고 싶다면요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            밴드를 구매하여 사용하고 싶으시군요?<br><br>
+
+            3차 시범 사업에서 지급되는 스마트워치는 손목닥터 9988 사업 전용으로 만들어져서 별도로 구매할 수 없다고 해요.<br><br>
+
+            그래서 보급밴드로 참여하길 원한다면 2차 시범 사업 지급 기종을 사용해서 참여해야 하해요.<br>
+            2차 사업 모델 스마트워치를 구매할 수 있는 사이트를 알려드릴게요.<br>
+            https://smartstore.naver.com/sevenelec/products/7907481346 <br><br>
+
+            그런데 만약 갤럭시워치나 애플워치로 참여하고 싶으시다면 참여유형변경이라는 걸 해야해요.<br>
+            유의해야 할 점은 사용중인 휴대폰 제조사와 사용할 자가밴드(애플워치, 갤럭시워치)의 제조사가 다르면 앱과 연동이 안되기 때문에 무용지물이라고 하네요.<br><br>
+            
+            그리고 주의해야 할 점 하나, 밴드 분실/파손 신고 전에 참여유형변경 신청 먼저 하면 안된다고 해요!(신고 순서 분실/파손 신고 → 참여유형변경 신청)  <br><br>
+
+            참여유형 변경 신청 방법을 알려드릴게요.<br>
+            손목닥터 9988 홈페이지 → 마이데이터 → 신청 내역 조회 → 선택한 스마트 워치 → 참여유형변경 신청(초록색 아이콘) 클릭
+        </div>
+    </div>
+
+    <div id="chat-11" class="chat-content hidden mt-4">
+        <div class="chat-bubble chat-bubble-left">
+            스트랩(시계줄)이 이상해요. 어디서 구매할 수 있나요?
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            아쉽게도 3차 사업에서 지급되는 스마트워치는 별도 구매 가능한 사이트가 없대요.<br><br>
+
+            나중에 개설할 예정이라고 하는데 2023년 10월 마지막 주 기준으로는 없다고 하더라구요.<br><br>
+
+            그래서 스트랩과 관련된 내용은 상담 센터(1811-9988)로 전화하거나 온라인 상담을 남기면 업체로 연결해 주고 있대요.
+        </div>
+        <div class="chat-bubble chat-bubble-left">
+            저는 그냥 일반 시중에서 구매하고 싶어요.
+        </div>
+        <div class="chat-bubble chat-bubble-right">
+            일반 시중에서 구매하려면 스마트워치와 호환 가능한 24mm 구경의 스트랩을 구매하면 된다고 해요.
+        </div>
+    </div>
+
+</div>
+
+<!-- 모달 -->
+<div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- 모달의 크기를 조절하기 위해 modal-lg 클래스를 추가합니다. -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="chatModalLabel">채팅 내용</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="chatModalBody">
+          <!-- 여기에 채팅 내용이 들어갑니다. -->
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
